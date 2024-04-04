@@ -1,0 +1,176 @@
+
+/* CSS for login.html */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:url(https://t3.ftcdn.net/jpg/02/61/11/02/360_F_261110226_MY2JyF9P2Bh6lgFAlj5rUZjg2BLabM8n.jpg);
+    
+    background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+  
+    padding: 30px;
+  }
+  
+  .container {
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    background: #fff;
+    padding: 40px 30px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    perspective: 2700px;
+  }
+  .container .cover{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    z-index: 98;
+    transition: all 1s ease;
+    transform-origin: left;
+    transform-style: preserve-3d;
+  }
+  .cover .back{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+  .container .cover::before,
+  .container .cover::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #544e5d;
+    opacity: 0.5;
+    z-index: 12;
+  }
+  .container .cover::after{
+    opacity: 0.3;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+ 
+  .container .cover img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 10;
+  }
+  .container .cover .text{
+    position: absolute;
+    z-index: 130;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .cover .text .text-1,
+    .cover .text .text-2{
+      font-size: 26px;
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+    }
+    .cover .text .text-2{
+      font-size: 15px;
+      font-weight: 500;
+    }
+ .container  .forms {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    width: 100%;
+  }
+  
+ .container .form-content {
+    padding: 20px;
+    align-items: center;
+      justify-content: space-between;
+      display: flex;
+  }
+  .form-content .signup-form {
+      width: calc(100% / 2 - 25px);
+    }
+  .container .form-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+ 
+ 
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .input-boxes {
+    margin-bottom: 20px;
+  }
+  
+  .input-box {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .input-box input:focus {
+    outline: none;
+    border-color: #68c58c;
+  }
+
+   
+ 
+  .button {
+    text-align: center;
+  }
+  
+  .button input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #68c58c;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .forms .form-content .button input:hover{
+    background: #7bcdac;
+  }
+  .forms .form-content label{
+    color: #74b88f;
+    cursor: pointer;
+  }
+
+  
+
+  

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Page</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+h1 {
+  font-family: Brush Script MT, cursive;
+  margin-bottom: 20px;
+  font-size: 80px;
+  color: #030303;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #070707;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+/* Jiggle animation */
+@keyframes jiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.user-details {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.user-details p {
+  margin: 10px 0;
+}
+
+.user-details p:first-child {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.user-details p:last-child {
+  font-size: 18px;
+}
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.logout-btn:hover {
+  animation: jiggle 0.5s ease;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>WELCOME</h1>
+  <div class="user-details" id="userDetails">
+    {% if username %}
+<p>Welcome, {{ username }}!</p>
+{% endif %}
+  </div> <!-- User details will be displayed here -->
+  
+  <a href="{{ url_for('upload') }}"class="btn">UPLOAD IMAGES <i class="fa fa-upload"></i></a>
+  
+  <a href="{{ url_for('createvideo') }}" class="btn">CREATE A VIDEO <i class="fa fa-play-circle"></i></a>
+  
+  <button type="button" class="btn btn-default btn-sm logout-btn" style="font-size:24px">Log Out <i class="fa fa-sign-out"></i></button>
+</div>
+
+
+
+<script>
+  // Add event listener to the logout button
+  document.querySelector('.logout-btn').addEventListener('click', function() {
+      // Redirect to the signup page
+      window.location.href = '/';  // Change the URL to your signup page
+  });
+  </script>
+
+
+</body>
+</html>
+

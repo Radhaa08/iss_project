@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Video Page</title>
+    <link rel="stylesheet" href="/static/createvid.css">
+</head>
+<body>
+    <br><br>
+    
+    <!-- Images uploaded to server -->
+        <h2>Uploaded Images</h2>
+    <div id="uploaded-images" class="flexbox">
+        <div id="image-preview">Loading images...</div>
+    </div>
+    <!-- Selected Images List -->
+    <h2>Selected Images</h2>
+    <div id="selected-images-list" class="flexbox">
+       
+        <div id="selected-images" class="image-grid"></div>
+    </div>
+      <!-- Audio Selection -->
+     <!-- Audio Selection -->
+<!-- Audio Selection -->
+<div id="audio-selection">
+    <h2>Select Audio</h2>
+    <div id="audio-list"></div> <!-- This div will contain the list of available audio files -->
+    <div id="selected-audio"></div> <!-- Added to display selected audio -->
+</div>
+
+<form id="create-video-form" action="/create_video" method="POST">
+    <input type="hidden" id="audio-src" name="audio_src" value="">
+    <input type="submit" value="Create Video">
+</form>
+
+    <!-- Create Video Button -->
+    <!-- <button id="create-video-btn" onclick="createSlideshow()">Create Video</button>
+    <button id="play-pause-btn">Pause</button>
+    Video Preview -->
+    
+ 
+    <div id="download-link">
+        <a id="download-video" href="#" style="display: none;" download="created_video.mp4">Download Video</a>
+    </div>
+    <script src="/static/createvid.js"></script>
+</body>
+</html>

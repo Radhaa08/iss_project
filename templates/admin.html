@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password Hash</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[1] }}</td>  <!-- Assuming name is stored in the second column -->
+            <td>{{ user[2] }}</td>  <!-- Assuming email is stored in the third column -->
+            <td>{{ user[3] }}</td>  <!-- Assuming password hash is stored in the fourth column -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
