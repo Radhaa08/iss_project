@@ -14,7 +14,7 @@ from datetime import datetime
 import base64
 import io
 import psycopg2
-
+import shutil
 
 app = Flask(__name__)
 app.secret_key = 'lalala'
@@ -382,6 +382,10 @@ def login():
                              session['username'] = user[2]
                              session['id']=user[0]
                              session['email'] = email
+                             saved_images_dir = os.path.join(os.getcwd(), 'static','saved_images')
+                             if os.path.exists(saved_images_dir):
+                                 shutil.rmtree(saved_images_dir)
+                             os.makedirs(saved_images_dir, exist_ok=True)
                 # Close database connection
                              cursor.close()
                              conn.close()
